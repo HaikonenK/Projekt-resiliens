@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#102318" />
+  <title>Projekt Resiliens – Expedition EKO-7</title>
+  <link rel="stylesheet" href="css/game.css" />
+</head>
+<body>
+  <div id="gameRoot">
+    <div id="cinematicFx" aria-hidden="true"><div class="warmwash"></div><div class="grain"></div><div class="vignette"></div></div>
+    <div id="topbar">
+      <div class="brand">
+        <span class="brand-kicker">EKO-7</span>
+        <strong>PROJEKT RESILIENS</strong>
+      </div>
+      <div class="top-actions">
+        <button id="mapBtn" class="ui-btn">Karta (K)</button>
+        <button id="journalBtn" class="ui-btn">Fältjournal (J)</button>
+      </div>
+    </div>
+
+    <section id="missionHud" aria-live="polite">
+      <div class="mission-label">AKTUELLT UPPDRAG</div>
+      <div id="missionTitle">Starta expeditionen</div>
+      <div id="missionText">Öppna introduktionen.</div>
+      <div class="progress-track"><div id="progressFill"></div></div>
+      <div id="missionProgress">0 / 5 undersökningar</div>
+    </section>
+
+    <canvas id="miniMap" width="220" height="160" aria-label="Minikarta"></canvas>
+    <div id="compass" aria-label="Kompass"><span class="c-n">N</span><span class="c-e">Ö</span><span class="c-s">S</span><span class="c-w">V</span><i id="compassNeedle"></i><b></b></div>
+
+    <div id="hint">W/S gå · A/D sidled · piltangenter eller mus för att vrida · E undersök</div>
+
+    <div id="focusNote">Klicka i spelet för att aktivera tangentbordet</div>
+
+    <div id="overlay" class="show" role="dialog" aria-modal="true">
+      <div class="panel" id="panel"></div>
+    </div>
+
+    <div id="journal" class="drawer" aria-hidden="true">
+      <div class="drawer-tab">FÄLTJOURNAL · EKO-7</div>
+      <div class="drawer-paper">
+        <div class="drawer-head">
+          <div>
+            <div class="eyebrow">FÄLTJOURNAL</div>
+            <h2>Expedition EKO-7</h2>
+          </div>
+          <button id="journalClose" class="icon-btn" aria-label="Stäng">×</button>
+        </div>
+        <div id="journalBody"></div>
+        <div class="drawer-footer">
+          <button id="resetBtn" class="danger-link">Återställ uppdraget</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mapOverlay" class="map-overlay" aria-hidden="true">
+      <div class="map-card">
+        <div class="drawer-head">
+          <div>
+            <div class="eyebrow">OMRÅDESKARTA</div>
+            <h2>EKO-7</h2>
+          </div>
+          <button id="mapClose" class="icon-btn" aria-label="Stäng">×</button>
+        </div>
+        <canvas id="bigMap" width="760" height="470"></canvas>
+        <p class="small">Gul markering = nästa huvudmål. Blå markering = frivillig observation.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/mission1.js"></script>
+  <script src="js/mission2.js"></script>
+  <script src="js/mission3.js"></script>
+  <script src="js/mission4.js"></script>
+  <script src="js/mission5.js"></script>
+  <script src="js/mission6.js"></script>
+</body>
+</html>
